@@ -1,0 +1,302 @@
+function createPreparationTable(docx) {
+  const data = [
+    {
+      no: '序号',
+      type: '类别',
+      size: '大小',
+      bold: '加粗',
+      align: '对齐',
+      characterSpacing: '字符间距',
+      indentation: '缩进',
+      lineSpacing: '行距',
+      beforeParagraph: '段前',
+      afterParagraph: '段后',
+      other: '其他',
+    },
+    {
+      no: '1',
+      type: '封面',
+      size: '一号',
+      bold: '是',
+      align: '居中',
+      characterSpacing: '加宽',
+      indentation: '0',
+      lineSpacing: '1.5',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '单位、日期字体三号，楷体',
+    },
+    {
+      no: '2',
+      type: '目录',
+      size: '小四',
+      bold: '否',
+      align: '居左',
+      characterSpacing: '标准',
+      indentation: '0',
+      lineSpacing: '1.5',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '适当调整内容与行距，使整个目录放置在2页以内',
+    },
+    {
+      no: '3',
+      type: '正文',
+      size: '小四',
+      bold: '否',
+      align: '居左',
+      characterSpacing: '标准',
+      indentation: '2',
+      lineSpacing: '1.5',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '大纲级别：正文',
+    },
+    {
+      no: '4',
+      type: '标题1',
+      size: '三号',
+      bold: '是',
+      align: '居中',
+      characterSpacing: '标准',
+      indentation: '0',
+      lineSpacing: '1.5',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '大纲级别：1级',
+    },
+    {
+      no: '5',
+      type: '标题2',
+      size: '四号',
+      bold: '是',
+      align: '居左',
+      characterSpacing: '标准',
+      indentation: '0',
+      lineSpacing: '1.5',
+      beforeParagraph: '0.3',
+      afterParagraph: '0',
+      other: '大纲级别：2级',
+    },
+    {
+      no: '6',
+      type: '标题3',
+      size: '小四',
+      bold: '是',
+      align: '居左',
+      characterSpacing: '标准',
+      indentation: '0',
+      lineSpacing: '1.5',
+      beforeParagraph: '0.5',
+      afterParagraph: '0',
+      other: '大纲级别：3级',
+    },
+    {
+      no: '7',
+      type: '表头',
+      size: '五号',
+      bold: '是',
+      align: '居左',
+      characterSpacing: '加宽',
+      indentation: '0',
+      lineSpacing: '1.0',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '大纲级别：正文',
+    },
+    {
+      no: '8',
+      type: '表格内文',
+      size: '五号',
+      bold: '否',
+      align: '居中',
+      characterSpacing: '标准',
+      indentation: '0',
+      lineSpacing: '1.0',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '大纲级别：正文；外边框用1.5磅细实线，框内线用0.75磅细实线',
+    },
+    {
+      no: '9',
+      type: '图片注释',
+      size: '五号',
+      bold: '是',
+      align: '居中',
+      characterSpacing: '加宽',
+      indentation: '0',
+      lineSpacing: '1.0',
+      beforeParagraph: '0',
+      afterParagraph: '0.3',
+      other: '大纲级别：正文',
+    },
+    {
+      no: '10',
+      type: '页眉',
+      size: '五号',
+      bold: '否',
+      align: '居中',
+      characterSpacing: '加宽',
+      indentation: '0',
+      lineSpacing: '1.0',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '下边框线，宋体',
+    },
+    {
+      no: '11',
+      type: '页脚',
+      size: '五号',
+      bold: '否',
+      align: '居中',
+      characterSpacing: '标准',
+      indentation: '0',
+      lineSpacing: '1.0',
+      beforeParagraph: '0',
+      afterParagraph: '0',
+      other: '下边框线，宋体',
+    },
+    {
+      no: '12',
+      type: '图片',
+      size: '',
+      bold: '',
+      align: '',
+      characterSpacing: '',
+      indentation: '',
+      lineSpacing: '',
+      beforeParagraph: '',
+      afterParagraph: '',
+      other:
+        '横向：1张设宽度为160mm；2张设宽度分别为80mm；其余根据版面排版自行调整。',
+    },
+    {
+      no: '13',
+      type: '页面边距',
+      size: '',
+      bold: '',
+      align: '',
+      characterSpacing: '',
+      indentation: '',
+      lineSpacing: '',
+      beforeParagraph: '',
+      afterParagraph: '',
+      other: '上、左边距2.5cm，下、右边距2.0cm',
+    },
+  ];
+
+  const table = [];
+
+  for (let i in data) {
+    table.push([
+      {
+        val: data[i]['no'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['type'],
+        opts: {
+          cellColWidth: 1100,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['size'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['bold'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['align'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['characterSpacing'],
+        opts: {
+          cellColWidth: 1100,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['indentation'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['lineSpacing'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['beforeParagraph'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['afterParagraph'],
+        opts: {
+          cellColWidth: 640,
+          color: '000000',
+          sz: '21',
+        },
+      },
+      {
+        val: data[i]['other'],
+        opts: {
+          cellColWidth: 2400,
+          color: '000000',
+          sz: '21',
+        },
+      },
+    ]);
+  }
+
+  const tableStyle = {
+    tableColWidth: 4261,
+    tableSize: 24,
+    tableColor: 'ada',
+    tableAlign: 'center',
+    tableFontFamily: 'Comic Sans MS',
+    spacingBefor: 120, // default is 100
+    spacingAfter: 120, // default is 100
+    spacingLine: 240, // default is 240
+    spacingLineRule: 'atLeast',
+    indent: 0,
+    fixedLayout: true, // default is false
+    borders: true,
+    borderSize: 2,
+  };
+
+  docx.createTable(table, tableStyle);
+}
+
+module.exports = createPreparationTable;
