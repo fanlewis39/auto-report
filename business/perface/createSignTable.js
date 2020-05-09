@@ -17,12 +17,13 @@ function createSignTable(docx) {
         },
       },
       {
-        val: '',
+        val: '结构检测报告',
         opts: {
           cellColWidth: 7500,
           color: '000000',
           sz: '28',
           gridSpan: 3,
+          b: true,
         },
       },
     ],
@@ -37,12 +38,13 @@ function createSignTable(docx) {
         },
       },
       {
-        val: '',
+        val: '青岛中航工程试验检测有限公司',
         opts: {
           cellColWidth: 7500,
           color: '000000',
           sz: '28',
           gridSpan: 3,
+          b: true,
         },
       },
     ],
@@ -113,7 +115,6 @@ function createSignTable(docx) {
           color: '000000',
           sz: '28',
           b: true,
-          hMerge: '1',
         },
       },
       {
@@ -123,7 +124,6 @@ function createSignTable(docx) {
           color: '000000',
           sz: '28',
           b: true,
-          hMerge: '1',
         },
       },
     ],
@@ -135,7 +135,8 @@ function createSignTable(docx) {
           color: '000000',
           sz: '28',
           b: true,
-          rowSpan: '2',
+          vAlign: 'center',
+          vMerge: 'restart',
         },
       },
       {
@@ -144,7 +145,6 @@ function createSignTable(docx) {
           cellColWidth: 1800,
           color: '000000',
           sz: '28',
-          vMerge: '1',
         },
       },
       {
@@ -171,6 +171,7 @@ function createSignTable(docx) {
           cellColWidth: 1800,
           color: '000000',
           sz: '28',
+          vMerge: 'continue',
         },
       },
       {
@@ -296,20 +297,11 @@ function createSignTable(docx) {
   ];
 
   const tableStyle = {
-    // tableColWidth: 4261,
-    tableSize: 24,
-    tableColor: 'ada',
-    tableAlign: 'center',
-    tableFontFamily: 'Comic Sans MS',
-    spacingBefor: 120, // default is 100
-    spacingAfter: 120, // default is 100
-    spacingLine: 240, // default is 240
-    spacingLineRule: 'atLeast', // default is atLeast
-    indent: 100, // table indent, default is 0
-    fixedLayout: true, // default is false
-    borders: true, // default is false. if true, default border size is 4
-    borderSize: 2, // To use this option, the 'borders' must set as true, default is 4
-    columns: [{ width: 4261 }, { width: 1 }, { width: 42 }], // Table logical columns
+    spacingBefor: 180,
+    spacingAfter: 180,
+    fixedLayout: true,
+    borders: true,
+    borderSize: 2,
   };
 
   docx.createTable(table, tableStyle);

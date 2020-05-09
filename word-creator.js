@@ -5,6 +5,9 @@ const app = express();
 const path = require('path');
 
 const createPreface = require('./business/perface/createPreface');
+const createChapter1 = require('./business/chapter1/createChapter1');
+const createChapter2 = require('./business/chapter2/createChapter2');
+const createChapter3 = require('./business/chapter3/createChapter3');
 
 app.get('/create_word', function (req, res) {
   res.writeHead(200, {
@@ -30,6 +33,9 @@ app.get('/create_word', function (req, res) {
   let pObj = docx.createP();
 
   createPreface(pObj, docx, path);
+  createChapter1(pObj, docx);
+  createChapter2(pObj, docx, path);
+  createChapter3(pObj, docx, path);
 
   let out = fs.createWriteStream('结构检测报告.docx');
 

@@ -1,4 +1,11 @@
 function createPreparationTable(docx) {
+  const style_21_640 = {
+    cellColWidth: 640,
+    color: '000000',
+    sz: '21',
+    vAlign: 'center',
+  };
+
   const data = [
     {
       no: '序号',
@@ -191,11 +198,7 @@ function createPreparationTable(docx) {
     table.push([
       {
         val: data[i]['no'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['type'],
@@ -203,95 +206,57 @@ function createPreparationTable(docx) {
           cellColWidth: 1100,
           color: '000000',
           sz: '21',
+          vAlign: 'center',
         },
       },
       {
         val: data[i]['size'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['bold'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['align'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['characterSpacing'],
-        opts: {
-          cellColWidth: 1100,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['indentation'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['lineSpacing'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['beforeParagraph'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['afterParagraph'],
-        opts: {
-          cellColWidth: 640,
-          color: '000000',
-          sz: '21',
-        },
+        opts: style_21_640,
       },
       {
         val: data[i]['other'],
         opts: {
-          cellColWidth: 2400,
+          cellColWidth: 2700,
           color: '000000',
           sz: '21',
+          vAlign: 'center',
         },
       },
     ]);
   }
 
   const tableStyle = {
-    tableColWidth: 4261,
-    tableSize: 24,
-    tableColor: 'ada',
-    tableAlign: 'center',
-    tableFontFamily: 'Comic Sans MS',
-    spacingBefor: 120, // default is 100
-    spacingAfter: 120, // default is 100
-    spacingLine: 240, // default is 240
-    spacingLineRule: 'atLeast',
-    indent: 0,
-    fixedLayout: true, // default is false
+    spacingBefor: 30,
+    spacingAfter: 30,
+    fixedLayout: true,
     borders: true,
     borderSize: 2,
   };
